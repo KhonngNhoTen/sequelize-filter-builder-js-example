@@ -10,14 +10,10 @@ const StudentController = {};
 
 StudentController.list = async (req, res, next) => {
   try {
-    const filter = new FilterBuilder(Student, req.query)
-      .like("name")
-      .equal("id")
-      .leftJoin(Course, "courses");
+    const filter = new FilterBuilder(Student, req.query).like("name").equal("id").leftJoin(Course, "courses");
 
     const data = await filter.run();
 
-    console.log(Course.associations);
     next(data);
   } catch (error) {
     console.error(error);
