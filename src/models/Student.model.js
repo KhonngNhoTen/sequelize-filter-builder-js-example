@@ -24,7 +24,10 @@ class Student extends Model {
 
   /** @param {Record<string, typeof Model>} param */
   static associate({ Student, User, Course }) {
-    Student.belongsTo(User, { as: "user", foreignKey: "creator" });
+    Student.belongsTo(User, {
+      as: "user",
+      foreignKey: "creator",
+    });
 
     Student.belongsToMany(Course, {
       as: "courses",

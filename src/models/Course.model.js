@@ -22,7 +22,7 @@ class Course extends Model {
   }
 
   /** @param {Record<string, typeof Model>} param */
-  static associate({ Course, User, Student }) {
+  static associate({ Course, User, Student, Lesson }) {
     Course.belongsTo(User, { as: "user", foreignKey: "creator" });
 
     Course.belongsToMany(Student, {
@@ -30,6 +30,8 @@ class Course extends Model {
       through: "student_course",
       foreignKey: "idCourse",
     });
+
+    Course.hasMany(Lesson, { as: "lessons", foreignKey: "idCourse" });
   }
 }
 

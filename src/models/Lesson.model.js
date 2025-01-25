@@ -26,7 +26,7 @@ class Lesson extends Model {
   /** @param {Record<string, typeof Model>} param */
   static associate({ Lesson, User, Course }) {
     Lesson.belongsTo(User, { as: "user", foreignKey: "creator" });
-    Lesson.belongsTo(Course, { as: "course", foreignKey: "idCourse" });
+    Lesson.belongsTo(Course, { as: "courses", foreignKey: "idCourse" });
   }
 }
 

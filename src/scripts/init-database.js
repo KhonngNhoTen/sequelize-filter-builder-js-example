@@ -82,8 +82,8 @@ async function initValue() {
   } catch (error) {
     await transaction.rollback();
     console.error("Init database fail!", error);
-    process.exit(1);
   }
+  process.exit(1);
 }
 
 initValue();
