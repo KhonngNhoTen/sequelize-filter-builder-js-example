@@ -32,7 +32,6 @@ StudentController.list = async (req, res, next) => {
 
     const data = await filter.run();
 
-    console.log(Course.associations);
     next(data);
   } catch (error) {
     console.error(error);
