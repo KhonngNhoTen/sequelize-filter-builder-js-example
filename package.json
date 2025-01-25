@@ -15,7 +15,7 @@
     "body-parser": "^1.20.3",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
-    "filter-builder-js": "^1.0.1",
+    "filter-builder-js": "^1.0.3",
     "md5": "^2.3.0",
     "pg": "^8.13.1",
     "pg-hstore": "^2.3.4",
